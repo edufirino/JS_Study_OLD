@@ -2,19 +2,34 @@
 <html>
 
 <head>
+    <!-- meta tags describe the content of the file
+    Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.
+    -->
+    <!-- charset - Specifies the character encoding for the HTML document-->
     <meta charset="utf-8">
     <meta name="description" content="Javascript calculator" />
+    <!--  viewport - means that the browser will render the width of the page at the width of its own screen -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--  stylesheet - Link to an external style sheet -->
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <title>Calculator</title>
 </head>
 
 <body>
-    <h1>Basic Calculator</h1>
-    <br />
+    <!-- The <h1> to <h6> tags are used to define HTML headings.  -->
+        <h1>Basic Calculator</h1>
+        <!-- The <br> tag inserts a single line break-->
+        <br />
+        <!--  The HTML <form> element defines a form that is used to collect user input: -->
+            
+            <!--   -->
+            <!-- The name attribute is required when sending data in a form submission. 
+                Different controls respond differently. For example, you may have several radio buttons with different id attributes,
+                 but the same name. 
+                 When submitted, there is just the one value in the response - the radio button you selected.  -->
     <form id="myForm" Name="calc">
         <input name="display" style="width:675px;height:100px;text-align:center;background-color: #1f80c9;"><br />
-        <!-- funcao inline que modifica o valor da propriedade value do display da calculadora-->
+        <!-- Inline Function which modifies the Calculator input property value -->
         <input type=button value="0" onclick="calc.display.value+='0'">
         <input type=button value="1" onclick="calc.display.value+='1'">
         <input type=button value="2" onclick="calc.display.value+='2'">
@@ -33,7 +48,7 @@
         <input type=button value="9" onclick="calc.display.value+='9'">
         <input type=button value="C"  onclick="calc.display.value=''"
         style="background-color:#cc0000;">
-        <!-- funcao que retorna o valor de uma equacao previamente montada -->
+        <!-- Function which returns the value of the equation previously set -->
         <input type=button value="="  onclick="calc.display.value=eval(calc.display.value)"
          style="background-color:#9a9c03;">
         <input type=button value="&#247;"  onclick="calc.display.value+='/'"

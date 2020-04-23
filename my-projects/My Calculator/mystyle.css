@@ -3,6 +3,11 @@ input {
     height:200px;
     font-size: 60px;
     border-radius: 50px;
+    /* 
+    Margin is on the outside of block elements while padding is on the inside.
+    Use margin to separate the block from things outside it
+    Use padding to move the contents away from the edges of the block. 
+    */
     margin: 15px;
     background-color: #330202;
     color: #b9faf5;
