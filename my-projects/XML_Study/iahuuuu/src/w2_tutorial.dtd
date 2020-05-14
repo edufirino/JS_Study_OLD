@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT company (staff)+>
+<!ELEMENT staff (first_name, last_name,home_phone,work_phone?,cell_phone?, dob?, profession?)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+<!ELEMENT home_phone (#PCDATA)>
+<!ELEMENT work_phone (#PCDATA)>
+<!ELEMENT cell_phone (#PCDATA)>
+<!ELEMENT dob (#PCDATA)>
+<!ELEMENT profession (#PCDATA)>
+

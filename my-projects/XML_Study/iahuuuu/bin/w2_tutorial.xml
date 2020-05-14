@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company SYSTEM "w2_tutorial.dtd" >
+<?xml-stylesheet type="text/css" href="./a/test.css" ?>
+<company>
+  <staff>
+    <first_name>Fred</first_name>
+    <last_name>Jones</last_name>
+    <home_phone>(512) 555-3301</home_phone>
+    <work_phone>(512) 555-2212</work_phone>
+  </staff>
+  <staff>
+    <first_name>Biff</first_name>
+    <last_name>Reynolds</last_name>
+    <home_phone>(512) 555-2222</home_phone>
+    <dob>July 31st </dob>
+  </staff>
+  <staff>
+    <first_name>Bill</first_name>
+    <last_name>Smith</last_name>
+    <home_phone>(512) 555-2323</home_phone>
+    <cell_phone>(512) 555-2231</cell_phone>
+    <profession>Contractor</profession>
+  </staff>
+</company>

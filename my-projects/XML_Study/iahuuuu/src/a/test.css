@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+first_name, last_name,home_phone,work_phone,cell_phone, dob, profession{
+	background-color: green;
+	margin: 5px;
+	
+}
+
+dob{
+	white-space: pre; 
+}

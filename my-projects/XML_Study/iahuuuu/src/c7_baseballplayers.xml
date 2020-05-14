@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nttbp:c6_baseballplayers
+	xmlns:nttbp="http://www.example.org/baseballplayer2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/baseballplayer2 c6_baseballplayers.xsd ">
+	
+	<?xml-stylesheet type="text/xsl" href="test.xsl" ?>
+
+	<nttbp:date_born>2001-01-01</nttbp:date_born>
+	<nttbp:player_name>joao</nttbp:player_name>
+	<nttbp:batting_average>1</nttbp:batting_average>
+</nttbp:c6_baseballplayers>

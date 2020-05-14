@@ -1,0 +1,123 @@
+//Output the content of the attribute “name”.
+/document/@name 
+
+//Select all document elements below the node “linkList” with the name A.
+/document/linkList[@name = 'A']/document
+
+//Merging character strings - Create an output consisting of the elements “lastName”, the character string ", " and firstName.
+concat(person/lastName,", ",person/firstName)
+
+//Filtering by attribute value
+//Select all jobs with a priority corresponding to the value “critical” or “high”.
+jobs/job[@priority= 'critical' or @priority= 'high']
+
+//Filtering by numeric values
+//Select all persons aged less than 35 years.
+persons/person[@age<35 ]
+
+//Limiting number
+//Select the first three person elements.
+persons/person[position()<=3]
+
+//Filtering by character conditions
+//Select all persons whose first name begins with the letter H.
+persons/person[starts-with(@firstName, 'H')]
+
+//Filtering by text length
+//Select all person elements with an attribute “firstName” a maximum of 5 characters long.
+persons/person[string-length(@firstName) <= 5]
+
+//Rounding up and down and adding
+//Determine the sum of all numbers, which round off to 34.
+sum(numbers/number[round(.) = 34])
+
+//Selecting the following siblings
+//Select the following product-siblings relatively from their current node.
+following-sibling::product
+
+//Selecting the following siblings
+//Select the following product siblings, which contain the value 1 as a category, relatively from their current node.
+following-sibling::product[@category="1"]
+
+//Attribute selection with namespaces
+Select the value of the attribute “href”, which is connected to the namespace
+document/reference/@x:href
+
+---------------- all descendents of content
+//Selecting all links of a document
+//Collect all links in the document below the elements document/content.
+/document/content//x:a
+
+//Selecting all links to Google within a document
+//Collect all links in the document which refer to a Google service
+/document/content//x:a[contains(@href,"google")]
+
+//Selecting elements by name
+//Select all elements with the name beginning with »item«.
+document/*[starts-with(local-name(), 'item')]
+
+
+//Selecting elements by name with namespaces
+//Select all elements having a name beginning with “item” and a namespace attached to
+t:document/t:*[starts-with(local-name(), 'item')]
+
+//Counting elements selected by certain criteria
+//Output in the sentence below how many albums in the collection are by solo artists (artist) and how many are by bands (band).
+concat('quantity cd solos ', count(collection/artist/cds/cd),' quantity cd bands ', count(collection/band/cds/cd))
+
+//Content of a parent element
+//Select the name of the artist that goes with the CD.
+../../name
+
+//Finding surrounding element
+//Resolve the id-attribute of the div-element nearest to you. The expression selected by you should work at any point within the nested list.
+ancestor::x:div[1]/@id
+
+//First and last element
+//Output the name of the first-listed CD by the last artist in the list.
+collection/artist[last()]/cds/cd[1]
+
+//Changing character string
+concat("HTML",substring-after(.,"HTTP")) or ============= concat('HTML', substring(., 5))
+
+
+//Counting nodes with condition
+Output the number of jobs with the priority “low”.
+count(jobs/job[./@priority="low"])
+
+//Comparisons in conditions
+//Select all job elements with an exceeded budget
+both work
+jobs/job[sum(descendant::work/@usedBudget) > ./@availableBudget]
+/jobs/job[sum(work/@usedBudget) > @availableBudget]
+
+//Selecting all links which open a new window
+/document/content//x:a[@target="_new"]
+
+//Calculating position
+count(preceding-sibling::title) + 1
+
+//Changing small to capital letters
+translate(text, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+
+//Selecting querystring
+substring-after(link, '?')
+
+
+//Elements with mixed text
+Output all item-elements that are specified in “px” and do not exceed the value of 70
+items/*[      contains( @width, "px")       and substring-before( @width, "px") <= 70        ]
+items/item[@unit = 'px' and @width < 70]
+
+//Add up all width-properties of the item-elements that are specified in “px” and do not exceed the value of 70
+sum(items/item[@unit = 'px' and @width <= 70]/@width)
+
+//Select all band or artist elements containing only one CD.
+collection/*[count(cds/cd)=1]
+
+//Select all elements attached to a namespace below “http://www.getit.de/”.
+items/*[starts-with(namespace-uri(),"http://www.getit.de/")]
+
+
+//Change the XML representation into a comma-separated variant.
+concat(cell[1], ';"', cell[2], '";"', cell[3], '";', cell[4])
